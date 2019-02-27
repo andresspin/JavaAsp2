@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b2b2756d2164ed79686fda91945cd05" Name="Diagram1">
+        <EntityTypeShape EntityType="videotiendaModel.alq_videojuegos" Width="1.5" PointX="10.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.alquiler" Width="1.5" PointX="8" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.cat_videojuegos" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.categorias" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.dominios" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.personas" Width="1.5" PointX="5.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.productores" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="videotiendaModel.videojuegos" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="videotiendaModel.FK__alq_video__id_al__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="videotiendaModel.FK__alq_video__nro_r__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="videotiendaModel.FK__alquiler__nro_do__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="videotiendaModel.FK__cat_video__id_ca__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="videotiendaModel.FK__cat_video__nro_r__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="videotiendaModel.FK__videojueg__id_pr__182C9B23" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
