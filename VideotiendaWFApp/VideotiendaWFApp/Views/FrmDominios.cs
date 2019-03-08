@@ -112,6 +112,7 @@ namespace VideotiendaWFApp.Views
         {
             Views.FrmGestionarDominios frmGestionarDominios = new Views.FrmGestionarDominios(null, null);
             frmGestionarDominios.ShowDialog();
+            refrescarTabla();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -121,8 +122,13 @@ namespace VideotiendaWFApp.Views
             {
                 Views.FrmGestionarDominios frmGestionarDominios = new Views.FrmGestionarDominios(d.tipo_dominio,d.id_dominio);
                 frmGestionarDominios.ShowDialog();
-
+                refrescarTabla();
             }
         }
     }
 }
+
+
+
+
+
