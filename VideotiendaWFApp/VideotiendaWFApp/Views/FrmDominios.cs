@@ -35,6 +35,21 @@ namespace VideotiendaWFApp.Views
 
             }
         }
+        private dominios getSelectedItem()
+        {
+            dominios d = new dominios();
+            try
+            {
+                    d.tipo_dominio = grDatos.Rows[grDatos.CurrentRow.Index].Cells[0].Value.ToString();
+                d.id_dominio = grDatos.Rows[grDatos.CurrentRow.Index].Cells[1].Value.ToString();
+                return d;
+
+
+            }
+            catch
+            { return null; }
+            
+        }
 #endregion
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -97,6 +112,17 @@ namespace VideotiendaWFApp.Views
         {
             Views.FrmGestionarDominios frmGestionarDominios = new Views.FrmGestionarDominios(null, null);
             frmGestionarDominios.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            dominios d = getSelectedItem();
+            if (d != null)
+            {
+                Views.FrmGestionarDominios frmGestionarDominios = new Views.FrmGestionarDominios(d.tipo_dominio,d.id_dominio);
+                frmGestionarDominios.ShowDialog();
+
+            }
         }
     }
 }

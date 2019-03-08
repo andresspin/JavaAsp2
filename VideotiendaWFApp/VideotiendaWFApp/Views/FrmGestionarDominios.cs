@@ -25,6 +25,24 @@ namespace VideotiendaWFApp.Views
             this.IdDominio = IdDominio;
         }
 
+        private void cargarDatos()
+
+        {
+            using (videotiendaEntities db = new videotiendaEntities())
+            {
+                oDominio = db.dominios.Find(tipoDominio,IdDominio);
+                txtTipo.Text = oDominio.tipo_dominio;
+                txtId.Text = oDominio.id_dominio;
+                txtValor.Text = oDominio.vlr_dominio;
+
+
+
+            }
+
+
+
+        }
+
         private void FrmGestionarDominios_Load(object sender, EventArgs e)
         {
             // haremos qu el cursor se ubique en el primer text bx
