@@ -20,9 +20,29 @@ namespace VideotiendaWFApp.Views
         // constructor
         public FrmGestionarDominios(String tipoDominio, String IdDominio)
         {
+            //dibuja el formulario
             InitializeComponent();
+            //Recibir los datos de la PK(si son nulos estamos insertando, si hay datos estamos editando
             this.tipoDominio=tipoDominio;
             this.IdDominio = IdDominio;
+            
+
+            //si hay datos (edicion) llamamos el metodo cargar datos()
+            if(! string .IsNullOrEmpty(this.IdDominio)
+                && ! string.IsNullOrEmpty(this.tipoDominio))
+            {
+                // Si es modo edicion, bloqueamos los TextBox de la llave primaria
+                cargarDatos();
+                this.txtTipo.ReadOnly = true;
+                this.txtId.ReadOnly = true;
+            }
+            else
+            {
+                this.txtTipo.ReadOnly = false;
+                this.txtId.ReadOnly = false;
+
+
+            }
         }
 
         private void cargarDatos()
@@ -57,19 +77,34 @@ namespace VideotiendaWFApp.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //Validar que todos los campos solicitados sean diligenciados
             if (String.IsNullOrEmpty(this.txtTipo.Text) || string.IsNullOrEmpty(this.txtId.Text) || string.IsNullOrEmpty(this.txtValor.Text))
             {
                 MessageBox.Show("Los campos con asterisco son obligatorios");
 
             }
             else {
+                // el using establece la conexion con la BD a traves de Entity Framwork
                 using (videotiendaEntities db = new videotiendaEntities())
-                { oDominio = new dominios();
+                {
+                    // si estamos en modo insercion, inicializamos el objeto oDominio
+                    if(this.tipoDominio == null && this.IdDominio == null)
+                        oDominio = new dominios();
+                
+              
                     oDominio.tipo_dominio = this.txtTipo.Text;
                     oDominio.id_dominio = this.txtId.Text;
                     oDominio.vlr_dominio = this.txtValor.Text;
-                    db.dominios.Add(oDominio);
+                    // en modo insercion, adicionamos un nuevo registro
+                    if (this.tipoDominio == null && this.IdDominio == null)
+                        db.dominios.Add(oDominio);
+                    else
+                        // en modo edicion, cambiamos el estado del objeto a modificar
+                        db.Entry(oDominio).State = System.Data.Entity.EntityState.Modified;
+                    // confirmar cambios en la BD
+                    
                     db.SaveChanges();
+                    //cerrar el formulario
                     this.Close();
 
 

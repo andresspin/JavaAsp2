@@ -11,3 +11,4 @@ C:\wkp_poli\JavaAsp2\VideotiendaWFApp\VideotiendaWFApp\bin\Debug\EntityFramework
 C:\wkp_poli\JavaAsp2\VideotiendaWFApp\VideotiendaWFApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\wkp_poli\JavaAsp2\VideotiendaWFApp\VideotiendaWFApp\obj\Debug\VideotiendaWFApp.exe
 C:\wkp_poli\JavaAsp2\VideotiendaWFApp\VideotiendaWFApp\obj\Debug\VideotiendaWFApp.pdb
+C:\wkp_poli\JavaAsp2\VideotiendaWFApp\VideotiendaWFApp\obj\Debug\VideotiendaWFApp.Views.FrmGestionarDominios.resources
